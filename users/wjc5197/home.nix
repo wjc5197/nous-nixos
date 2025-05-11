@@ -469,6 +469,12 @@ in
     neovim = {
       enable = true;
     };
+    nix-index = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
+    };
     obs-studio = {
       enable = true;
     };
