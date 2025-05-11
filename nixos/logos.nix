@@ -173,7 +173,7 @@
     # Enable CUPS to print documents.
     printing = {
       enable = true;
-      services.printing.drivers = with pkgs; [
+      drivers = with pkgs; [
         gutenprint
         hplip
         splix

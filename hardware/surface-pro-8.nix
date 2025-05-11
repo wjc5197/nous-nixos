@@ -10,6 +10,7 @@
     kernelModules = [ "kvm-intel" ];
     initrd = {
       availableKernelModules = [
+        "aesni_intel"
         "ahci"
         "nvme"
         "sd_mod"
@@ -90,7 +91,7 @@
       theme = "tela";
     })
     ./modules/hardware-common.nix
-    ./modules/luks.nix
+    # ./modules/luks.nix
     inputs.nixos-hardware.nixosModules.microsoft-surface-pro-intel
   ];
 
