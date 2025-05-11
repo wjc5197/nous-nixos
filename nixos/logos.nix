@@ -104,6 +104,13 @@
     cloudflare-warp = {
       enable = true;
     };
+    dictd = {
+      enable = true;
+      DBs = with pkgs.dictdDBs; [
+        wiktionary
+        wordnet
+      ];
+    };
     displayManager = {
       ly = {
         enable = true;

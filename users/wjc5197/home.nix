@@ -286,6 +286,7 @@ in
         verilator
         # volume
         w3m
+        windsurf
         wineWowPackages.full
         wolfram-engine
         # xautolock
