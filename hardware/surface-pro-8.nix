@@ -90,6 +90,7 @@
       theme = "tela";
     })
     ./modules/hardware-common.nix
+    ./modules/luks.nix
     inputs.nixos-hardware.nixosModules.microsoft-surface-pro-intel
   ];
 
