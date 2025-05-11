@@ -54,6 +54,10 @@
   # started in user sessions.
   # programs.mtr.enable = true;
   programs = {
+    kdeconnect = {
+      enable = true;
+      package = pkgs.valent;
+    };
     nix-ld = {
       enable = true;
     };

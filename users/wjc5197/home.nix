@@ -198,6 +198,7 @@ in
         html-tidy
         http-server
         hugo
+        hyperfine
         imagemagick
         inkscape
         jdt-language-server
@@ -205,8 +206,6 @@ in
         jq
         julia
         just
-        kdePackages.full
-        # kdePackages.okular
         kicad
         krita
         leiningen
@@ -304,6 +303,10 @@ in
       ++ (with pkgs.jetbrains; [
         idea-community-bin
         rust-rover
+      ])
+      ++ (with pkgs.kdePackages; [
+        # full
+        # okular
       ])
       ++ (with pkgs.nodePackages; [
         prettier
