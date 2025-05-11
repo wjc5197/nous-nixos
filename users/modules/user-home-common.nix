@@ -10,6 +10,7 @@
     packages = with pkgs; [
       brightnessctl
       btop
+      du-dust
       fastfetch
       fd
       gdb

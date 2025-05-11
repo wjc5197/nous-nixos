@@ -16,6 +16,7 @@
       groff
       # inetutils # too old
       libgccjit
+      nfs-utils
       # openssl
       # pinentry-all
       pkg-config
@@ -31,7 +32,10 @@
       enable = true;
       defaultFonts = {
         emoji = [ "Noto Color Emoji" ];
-        monospace = [ "Iosevka" "Sarasa Mono SC" ];
+        monospace = [
+          "Iosevka"
+          "Sarasa Mono SC"
+        ];
         sansSerif = [ "Sarasa Gothic SC" ];
         serif = [ "Sarasa Mono Slab SC" ];
       };
@@ -116,6 +120,9 @@
     pam = {
       sshAgentAuth.enable = true;
       services.sudo.sshAgentAuth = true;
+    };
+    rtkit = {
+      enable = true;
     };
     sudo = {
       wheelNeedsPassword = false;

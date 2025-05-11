@@ -89,6 +89,9 @@
     #   enable = true;
     #   rpcSecretFile = /run/secrets/aria2-rpc-token.txt;
     # };
+    avahi = {
+      enable = true;
+    };
     # service caddy doesn't provide binary
     # caddy = {
     #   enable = true;
@@ -170,6 +173,11 @@
     # Enable CUPS to print documents.
     printing = {
       enable = true;
+      services.printing.drivers = with pkgs; [
+        gutenprint
+        hplip
+        splix
+      ];
     };
     rabbitmq = {
       enable = true;
