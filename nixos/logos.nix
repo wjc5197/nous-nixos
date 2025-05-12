@@ -1,4 +1,5 @@
 {
+  inputs,
   lib,
   pkgs,
   ...
@@ -48,6 +49,7 @@
   imports = [
     ./modules/nixos-common.nix
     ./modules/zsh
+    inputs.nix-index-database.nixosModules.nix-index
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -57,6 +59,10 @@
     kdeconnect = {
       enable = true;
       package = pkgs.valent;
+    };
+    # when using nix-index-database, do not also include nix-index
+    nix-index-database.comma = {
+      enable = true;
     };
     nix-ld = {
       enable = true;

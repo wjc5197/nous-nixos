@@ -9,12 +9,13 @@
       autoconf
       automake
       bison
+      dig
       file
       flex
       gnum4
       gnumake
       groff
-      # inetutils # too old
+      inetutils
       libgccjit
       nfs-utils
       # openssl
@@ -157,6 +158,7 @@
       alsa.enable = true;
       enable = true;
       pulse.enable = true;
+      wireplumber.enable = true;
     };
   };
   users = {

@@ -244,6 +244,7 @@ in
         racket-minimal
         rclone
         redshift
+        remmina
         rsync
         ruff-lsp # python lsp
         # rustlings
@@ -404,6 +405,9 @@ in
       enableZshIntegration = true;
     };
     git = {
+      aliases = {
+        graph = "log --all --oneline --graph --decorate";
+      };
       enable = true;
       extraConfig = {
         # although gh as credential helper by default, netrc can be used in non github repo
@@ -471,12 +475,6 @@ in
     };
     neovim = {
       enable = true;
-    };
-    nix-index = {
-      enable = true;
-      enableBashIntegration = true;
-      enableFishIntegration = true;
-      enableZshIntegration = true;
     };
     obs-studio = {
       enable = true;
