@@ -114,16 +114,16 @@
         interval = "weekly";
       };
     };
-    cloudflare-warp = {
-      enable = true;
-    };
-    dictd = {
-      enable = true;
-      DBs = with pkgs.dictdDBs; [
-        wiktionary
-        wordnet
-      ];
-    };
+    # cloudflare-warp = {
+    #   enable = true;
+    # };
+    # dictd = {
+    #   enable = true;
+    #   DBs = with pkgs.dictdDBs; [
+    #     wiktionary
+    #     wordnet
+    #   ];
+    # };
     displayManager = {
       ly = {
         enable = true;
@@ -204,9 +204,9 @@
         SERVER_PORT = 8070;
       };
     };
-    sunshine = {
-      enable = true;
-    };
+    # sunshine = {
+    #   enable = true;
+    # };
     tailscale = {
       enable = true;
     };
@@ -238,7 +238,7 @@
     apache-kafka.wantedBy = lib.mkForce [ ];
     # caddy.wantedBy = lib.mkForce [ ];
     clamav-daemon.wantedBy = lib.mkForce [ ];
-    cloudflare-warp.wantedBy = lib.mkForce [ ];
+    # cloudflare-warp.wantedBy = lib.mkForce [ ];
     distccd.wantedBy = lib.mkForce [ ];
     docker.wantedBy = lib.mkForce [ ];
     elasticsearch.wantedBy = lib.mkForce [ ];
@@ -257,7 +257,7 @@
     rabbitmq.wantedBy = lib.mkForce [ ];
     redis-logos.wantedBy = lib.mkForce [ ];
     stirling-pdf.wantedBy = lib.mkForce [ ];
-    sunshine.wantedBy = lib.mkForce [ ];
+    # sunshine.wantedBy = lib.mkForce [ ];
     tailscale.wantedBy = lib.mkForce [ ];
     zookeeper.wantedBy = lib.mkForce [ ];
   };
