@@ -3,8 +3,12 @@
 
   inputs = {
     darwin = {
-      url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:LnL7/nix-darwin";
+    };
+    disko = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/disko";
     };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     grub2-themes.url = "github:vinceliuice/grub2-themes";
@@ -13,6 +17,10 @@
       url = "github:nix-community/home-manager";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/feefc78";
+    nix-index-database = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nix-index-database";
+    };
     nixos-wsl = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/NixOS-WSL";
