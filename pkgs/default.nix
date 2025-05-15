@@ -7,6 +7,7 @@ final: prev: {
   emacsclient = final.callPackage ./emacsclient { };
   lceda-pro = final.callPackage ./lceda-pro { };
   monolisa = final.callPackage ./monolisa { };
+  polkit-gnome-agent = final.callPackage ./polkit-gnome-agent { };
   rime-ice = final.callPackage ./rime-ice { };
   sf-pro = final.callPackage ./sf-pro { };
   spotify-custom = final.callPackage ./spotify-custom { };
