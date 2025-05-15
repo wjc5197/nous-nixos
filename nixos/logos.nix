@@ -31,6 +31,7 @@
       man-pages
       man-pages-posix
       wayland-utils
+      valgrind-light
       vulkan-tools
       xsel
     ];
@@ -204,9 +205,10 @@
         SERVER_PORT = 8070;
       };
     };
-    # sunshine = {
-    #   enable = true;
-    # };
+    sunshine = {
+      autoStart = false;
+      enable = true;
+    };
     tailscale = {
       enable = true;
     };
@@ -257,8 +259,8 @@
     rabbitmq.wantedBy = lib.mkForce [ ];
     redis-logos.wantedBy = lib.mkForce [ ];
     stirling-pdf.wantedBy = lib.mkForce [ ];
-    # sunshine.wantedBy = lib.mkForce [ ];
     tailscale.wantedBy = lib.mkForce [ ];
+    tailscaled.wantedBy = lib.mkForce [ ];
     zookeeper.wantedBy = lib.mkForce [ ];
   };
 
