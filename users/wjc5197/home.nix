@@ -9,6 +9,7 @@
 }:
 
 let
+  gpg-key-fingerprint = "28ED85EC47C3E1A84FA9A52B5F919C9DB9BADDD4";
   system = pkgs.system;
 in
 {
@@ -30,7 +31,7 @@ in
         address = "wjc5197@gmail.com";
         flavor = "gmail.com";
         gpg = {
-          key = "28ED85EC47C3E1A84FA9A52B5F919C9DB9BADDD4";
+          key = gpg-key-fingerprint;
           signByDefault = true;
         };
         imap = {
@@ -268,7 +269,6 @@ in
         stylua
         styluslabs-write
         # subtitleedit
-        tailscale
         tailwindcss
         # tdlib
         termshark
@@ -412,8 +412,14 @@ in
       extraConfig = {
         # although gh as credential helper by default, netrc can be used in non github repo
         credential.helper = "netrc";
+        commit = {
+          verbose = true;
+        };
         color = {
           ui = "auto";
+        };
+        help = {
+          autocorrect = "prompt";
         };
         init = {
           defaultBranch = "main";
@@ -433,6 +439,10 @@ in
         tag = {
           sort = "version:refname";
         };
+      };
+      signing ={
+        key = gpg-key-fingerprint;
+        signByDefault = true;
       };
       userEmail = "wjc5197@gmail.com";
       userName = "wjc5197";

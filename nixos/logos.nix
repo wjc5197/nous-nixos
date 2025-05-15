@@ -294,6 +294,13 @@
       enable = true;
     };
     spiceUSBRedirection.enable = true;
+    virtualbox = {
+      host = {
+        addNetworkInterface = false;
+        enable = true;
+        enableKvm = true;
+      };
+    };
   };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
