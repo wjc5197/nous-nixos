@@ -240,6 +240,7 @@ logosStartupHook = do
   spawnOnce "CM_SELECTIONS=clipboard clipmenud"
   spawnOnce "dunst -conf ~/.config/dunst/dunstrc"
   spawnOnce "feh --bg-fill --no-fehbg ~/.wallpapers/haskell-xmonad.png"
+  spawnOnce "polkit-gnome-agent"
   spawnOnce "redshift -c ~/.config/redshift/redshift.conf"
   -- spawnOnce "xautolock -time 30 -locker \"loginctl lock-session $XDG_SESSION_ID\""
   spawnOnce "xset s off"

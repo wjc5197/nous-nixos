@@ -236,34 +236,35 @@
     };
   };
 
-  systemd.services = {
-    apache-kafka.wantedBy = lib.mkForce [ ];
-    # caddy.wantedBy = lib.mkForce [ ];
-    clamav-daemon.wantedBy = lib.mkForce [ ];
-    # cloudflare-warp.wantedBy = lib.mkForce [ ];
-    distccd.wantedBy = lib.mkForce [ ];
-    docker.wantedBy = lib.mkForce [ ];
-    elasticsearch.wantedBy = lib.mkForce [ ];
-    fwupd.wantedBy = lib.mkForce [ ];
-    geth-logos.wantedBy = lib.mkForce [ ];
-    guix-daemon.wantedBy = lib.mkForce [ ];
-    jenkins.wantedBy = lib.mkForce [ ];
-    k3s.wantedBy = lib.mkForce [ ];
-    libvirtd.wantedBy = lib.mkForce [ ];
-    libvirt-guests.wantedBy = lib.mkForce [ ];
-    logrotate-checkconf.wantedBy = lib.mkForce [ ];
-    mysql.wantedBy = lib.mkForce [ ];
-    # nginx.wantedBy = lib.mkForce [ ];
-    ollama.wantedBy = lib.mkForce [ ];
-    postgresql.wantedBy = lib.mkForce [ ];
-    rabbitmq.wantedBy = lib.mkForce [ ];
-    redis-logos.wantedBy = lib.mkForce [ ];
-    stirling-pdf.wantedBy = lib.mkForce [ ];
-    tailscale.wantedBy = lib.mkForce [ ];
-    tailscaled.wantedBy = lib.mkForce [ ];
-    zookeeper.wantedBy = lib.mkForce [ ];
+  systemd = {
+    services = {
+      apache-kafka.wantedBy = lib.mkForce [ ];
+      # caddy.wantedBy = lib.mkForce [ ];
+      clamav-daemon.wantedBy = lib.mkForce [ ];
+      # cloudflare-warp.wantedBy = lib.mkForce [ ];
+      distccd.wantedBy = lib.mkForce [ ];
+      docker.wantedBy = lib.mkForce [ ];
+      elasticsearch.wantedBy = lib.mkForce [ ];
+      fwupd.wantedBy = lib.mkForce [ ];
+      geth-logos.wantedBy = lib.mkForce [ ];
+      guix-daemon.wantedBy = lib.mkForce [ ];
+      jenkins.wantedBy = lib.mkForce [ ];
+      k3s.wantedBy = lib.mkForce [ ];
+      libvirtd.wantedBy = lib.mkForce [ ];
+      libvirt-guests.wantedBy = lib.mkForce [ ];
+      logrotate-checkconf.wantedBy = lib.mkForce [ ];
+      mysql.wantedBy = lib.mkForce [ ];
+      # nginx.wantedBy = lib.mkForce [ ];
+      ollama.wantedBy = lib.mkForce [ ];
+      postgresql.wantedBy = lib.mkForce [ ];
+      rabbitmq.wantedBy = lib.mkForce [ ];
+      redis-logos.wantedBy = lib.mkForce [ ];
+      stirling-pdf.wantedBy = lib.mkForce [ ];
+      tailscale.wantedBy = lib.mkForce [ ];
+      tailscaled.wantedBy = lib.mkForce [ ];
+      zookeeper.wantedBy = lib.mkForce [ ];
+    };
   };
-
   system.stateVersion = "24.11"; # Did you read the comment?
 
   # Set your time zone.

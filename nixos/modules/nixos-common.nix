@@ -122,6 +122,9 @@
       sshAgentAuth.enable = true;
       services.sudo.sshAgentAuth = true;
     };
+    polkit = {
+      enable = true;
+    };
     rtkit = {
       enable = true;
     };

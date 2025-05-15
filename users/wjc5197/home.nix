@@ -239,6 +239,7 @@ in
         opera
         ormolu
         plantuml
+        polkit-gnome-agent
         prismlauncher
         python3
         ra-multiplex
