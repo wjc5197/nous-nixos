@@ -133,7 +133,9 @@
     }
   ];
 
-  virtualisation.docker.storageDriver = "btrfs";
+  virtualisation = {
+    docker.storageDriver = "btrfs";
+  };
   # powerManagement = {
   #   cpuFreqGovernor = "powersave";
   #   powertop = {
