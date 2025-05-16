@@ -602,7 +602,6 @@ in
       "dunst/dunstrc".source = ./dunstrc;
       "fcitx/rime/default.custom.yaml".source = ./rime.yaml;
       "fcitx5/conf/clipboard.conf".source = ./fcitx5-clipboard.conf;
-      "nvim/lua".source = ./nvim;
       "redshift/redshift.conf".source = ./redshift.conf;
       # "sway/config".source = pkgs.lib.mkOverride 10 "/home/<user>/dotfiles/sway/config"
       "Zeal/Zeal.conf".source = ./zeal.conf;
