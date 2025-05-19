@@ -47,9 +47,6 @@
         mkSystem "logos-cascade" {
           hardware = "laptop";
           extraModules = [
-            ./nixos/modules/docker-host-firewall.nix
-            ./nixos/modules/libvirt-host-firewall.nix
-            ./nixos/modules/localhost-http-proxy.nix
           ];
           nixos = "logos";
           system = "x86_64-linux";
@@ -63,16 +60,13 @@
           dpi = 169;
           hardware = "surface-pro-8";
           extraModules = [
-            ./nixos/modules/docker-host-firewall.nix
-            ./nixos/modules/libvirt-host-firewall.nix
-            ./nixos/modules/localhost-http-proxy.nix
             # ./nixos/modules/nix-substituters.nix
             # (
             #   { pkgs, ... }:
             #   {
-            #     home-manager.users.wjc5197 = {
-            #       programs.zsh.enable = true;
-            #     };
+                # home-manager.users.wjc5197 = {
+                #   programs.zsh.enable = true;
+                # };
             #   }
             # )
           ];
@@ -87,7 +81,6 @@
         // mkSystem "thoth-vm" {
           hardware = "vm";
           extraModules = [
-            ./nixos/modules/libvirt-guest-http-proxy.nix
           ];
           nixos = "thoth";
           system = "x86_64-linux";
@@ -100,7 +93,6 @@
           hardware = "removable";
           extraModules = [
             ./nixos/modules/fish
-            ./nixos/modules/localhost-http-proxy.nix
             (
               { pkgs, ... }:
               {
@@ -121,7 +113,6 @@
           hardware = "laptop";
           extraModules = [
             ./nixos/modules/zsh
-            ./nixos/modules/localhost-http-proxy.nix
           ];
           nixos = "plasma";
           system = "x86_64-linux";
@@ -135,7 +126,6 @@
           hardware = "raspberry-pi-4";
           extraModules = [
             ./nixos/modules/zsh
-            ./nixos/modules/localhost-http-proxy.nix
           ];
           nixos = "thoth";
           system = "aarch64-linux";

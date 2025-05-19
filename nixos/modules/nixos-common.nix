@@ -9,6 +9,7 @@
       autoconf
       automake
       bison
+      clash-meta
       dig
       file
       flex
