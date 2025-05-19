@@ -44,9 +44,10 @@
             ];
           })
           fcitx5-chinese-addons
-          fcitx5-with-addons
           fcitx5-configtool
           fcitx5-gtk
+          fcitx5-mozc
+          fcitx5-with-addons
           kdePackages.fcitx5-qt
         ];
       };
