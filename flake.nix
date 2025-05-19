@@ -60,6 +60,7 @@
           dpi = 169;
           hardware = "surface-pro-8";
           extraModules = [
+            ./nixos/modules/localhost-dns.nix
             # ./nixos/modules/nix-substituters.nix
             # (
             #   { pkgs, ... }:
