@@ -53,6 +53,11 @@
     inputs.nix-index-database.nixosModules.nix-index
   ];
 
+  networking.firewall.trustedInterfaces = [
+    "docker0"
+    "virbr0"
+  ];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
