@@ -30,6 +30,7 @@
       lm_sensors
       man-pages
       man-pages-posix
+      rr
       wayland-utils
       valgrind-light
       vulkan-tools
@@ -294,19 +295,20 @@
         package = pkgs.qemu_kvm;
         runAsRoot = true;
         swtpm.enable = true;
+        vhostUserPackages = [ pkgs.virtiofsd ];
       };
     };
     lxc = {
       enable = true;
     };
     spiceUSBRedirection.enable = true;
-    virtualbox = {
-      host = {
-        addNetworkInterface = false;
-        enable = true;
-        enableKvm = true;
-      };
-    };
+    # virtualbox = {
+    #   host = {
+    #     addNetworkInterface = false;
+    #     enable = true;
+    #     enableKvm = true;
+    #   };
+    # };
   };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

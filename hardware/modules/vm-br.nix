@@ -2,7 +2,7 @@
   networking = {
     bridges = {
       "vm-br" = {
-        interfaces = [ 
+        interfaces = [
           # "wlp0s20f3"
         ];
       };
@@ -11,7 +11,7 @@
       # useDHCP = true;
       ipv4.addresses = [
         {
-          address = "192.168.1.1";
+          address = "192.168.122.1";
           prefixLength = 24;
         }
       ];

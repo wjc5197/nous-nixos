@@ -22,6 +22,7 @@
       # openssl
       # pinentry-all
       pkg-config
+      tcpdump
     ];
     wordlist = {
       enable = true;
