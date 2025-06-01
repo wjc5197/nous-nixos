@@ -202,6 +202,7 @@ in
         imagemagick
         inkscape
         jdt-language-server
+        # jflap
         # joplin-desktop
         jq
         julia
@@ -243,11 +244,11 @@ in
         python3
         ra-multiplex
         racket-minimal
+        # rars
         rclone
         redshift
         remmina
         rsync
-        # rustlings
         rustup
         # rust-analyzer
         sbcl
@@ -358,7 +359,9 @@ in
   };
 
   imports = [
+    ../modules/neovim-lazy-path.nix
     ../modules/user-home-common.nix
+    # inputs.nixvim.homeModules.nixvim
   ];
 
   programs = {
