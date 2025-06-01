@@ -40,22 +40,25 @@
     packages = with pkgs; [
       jetbrains-mono
       lxgw-wenkai
-      maple-mono-NF
+      maple-mono.NF
       monolisa
       sf-pro
     ];
   };
 
   imports = [
+    ./modules/docker.nix
+    ./modules/libvirt.nix
     ./modules/nixos-common.nix
-    ./modules/zsh
+    ./modules/waydroid.nix
+    ./modules/zsh.nix
     inputs.nix-index-database.nixosModules.nix-index
   ];
 
-  networking.firewall.trustedInterfaces = [
-    "docker0"
-    "virbr0"
-  ];
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -265,33 +268,12 @@
       zookeeper.wantedBy = lib.mkForce [ ];
     };
   };
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
   virtualisation = {
-    docker = {
-      enable = true;
-    };
-    libvirtd = {
-      enable = true;
-      qemu = {
-        ovmf = {
-          enable = true;
-          packages = [
-            (pkgs.OVMF.override {
-              secureBoot = true;
-              tpmSupport = true;
-            }).fd
-          ];
-        };
-        package = pkgs.qemu_kvm;
-        runAsRoot = true;
-        swtpm.enable = true;
-        vhostUserPackages = [ pkgs.virtiofsd ];
-      };
-    };
     lxc = {
       enable = true;
     };
@@ -304,10 +286,6 @@
     #   };
     # };
   };
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

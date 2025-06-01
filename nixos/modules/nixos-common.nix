@@ -122,7 +122,10 @@
   security = {
     pam = {
       sshAgentAuth.enable = true;
-      services.sudo.sshAgentAuth = true;
+      services = {
+        i3lock.enable = true;
+        sudo.sshAgentAuth = true;
+      };
     };
     polkit = {
       enable = true;

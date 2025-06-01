@@ -4,7 +4,6 @@
   inputs,
   lib,
   pkgs,
-  # system,
   ...
 }:
 
@@ -236,7 +235,7 @@ in
         onboard
         onedrive
         # openai-whisper-cpp
-        opera
+        # opera
         ormolu
         plantuml
         polkit-gnome-agent
@@ -248,7 +247,6 @@ in
         redshift
         remmina
         rsync
-        ruff-lsp # python lsp
         # rustlings
         rustup
         # rust-analyzer
@@ -313,6 +311,9 @@ in
       ++ (with pkgs.nodePackages; [
         prettier
       ])
+      ++ (with pkgs.python312Packages; [
+        python-lsp-server
+      ])
       # specific architecture pkgs, mostly custom pkgs
       ++ lib.optionals (system == "x86_64-linux") (
         with pkgs;
@@ -352,12 +353,11 @@ in
       # MUHOME = "${config.home.homeDirectory}/maildir";
       TERMINAL = "kitty";
     };
-    stateVersion = "24.11"; # Please read the comment before changing.
+    stateVersion = "25.05"; # Please read the comment before changing.
     username = "wjc5197";
   };
 
   imports = [
-    ../modules/lazyvim.nix
     ../modules/user-home-common.nix
   ];
 
@@ -547,7 +547,7 @@ in
       defaultKeymap = "emacs";
       enable = true;
       enableCompletion = true;
-      initExtra = builtins.readFile ./zshrc;
+      initContent = builtins.readFile ./zshrc;
       history = {
         size = 10000000;
       };

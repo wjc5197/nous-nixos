@@ -34,7 +34,7 @@
   };
   i18n = {
     inputMethod = {
-      enabled = "fcitx5";
+      enable = true;
       fcitx5 = {
         addons = with pkgs; [
           (fcitx5-rime.override {
@@ -51,6 +51,7 @@
           kdePackages.fcitx5-qt
         ];
       };
+      type = "fcitx5";
     };
   };
   programs = {
