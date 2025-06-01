@@ -1,8 +1,15 @@
 {
   lib,
+  pkgs,
   ...
 }:
 {
+  environment = {
+    systemPackages = with pkgs; [
+      docker-compose
+      lazydocker
+    ];
+  };
   networking.firewall.trustedInterfaces = [
     "docker0"
   ];
