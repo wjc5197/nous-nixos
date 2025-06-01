@@ -77,11 +77,6 @@
       fsType = "btrfs";
       options = [ "subvol=root" ];
     };
-    "/vm" = {
-      device = "/dev/disk/by-label/nixos";
-      fsType = "btrfs";
-      options = [ "subvol=vm" ];
-    };
   };
 
   imports = [
