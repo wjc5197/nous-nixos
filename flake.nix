@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
-    nixos-hardware.url = "github:NixOS/nixos-hardware/feefc78";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-index-database = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/nix-index-database";
@@ -26,6 +26,10 @@
       url = "github:nix-community/NixOS-WSL";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixvim = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixvim";
+    };
     # stylix.url = "github:danth/stylix";
   };
   outputs =
@@ -64,9 +68,9 @@
             # (
             #   { pkgs, ... }:
             #   {
-                # home-manager.users.wjc5197 = {
-                #   programs.zsh.enable = true;
-                # };
+            #     home-manager.users.wjc5197 = {
+            #       programs.zsh.enable = true;
+            #     };
             #   }
             # )
           ];
@@ -92,7 +96,7 @@
         // mkSystem "plasma-rm" {
           hardware = "removable";
           extraModules = [
-            ./nixos/modules/fish
+            ./nixos/modules/fish.nix
             (
               { pkgs, ... }:
               {
@@ -112,7 +116,7 @@
         // mkSystem "plasma-laptop" {
           hardware = "laptop";
           extraModules = [
-            ./nixos/modules/zsh
+            ./nixos/modules/zsh.nix
           ];
           nixos = "plasma";
           system = "x86_64-linux";
@@ -125,7 +129,7 @@
         // mkSystem "thoth-pi" {
           hardware = "raspberry-pi-4";
           extraModules = [
-            ./nixos/modules/zsh
+            ./nixos/modules/zsh.nix
           ];
           nixos = "thoth";
           system = "aarch64-linux";
