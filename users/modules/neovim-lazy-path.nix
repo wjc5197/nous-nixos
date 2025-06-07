@@ -21,8 +21,6 @@
       lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
     in
     ''
-      return {
-        "${lazyPath}"
-      }
+      return "${lazyPath}"
     '';
 }
