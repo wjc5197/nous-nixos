@@ -1,2 +1,1 @@
-/var/lib/libvirt/qemu/*.xml
-/vm
+/var/lib/libvirt

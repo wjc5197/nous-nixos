@@ -174,9 +174,6 @@ in
         ghc
         ghostscript
         gimp
-        glew
-        glfw
-        # glib
         gnuapl
         gnuplot
         goldendict-ng
@@ -187,8 +184,6 @@ in
         # gping
         gradle
         graphviz
-        gsl
-        gtest
         gtkwave
         guile
         # haskellPackages.ghcup
@@ -281,8 +276,7 @@ in
         typescript
         typescript-language-server
         typst
-        typstyle
-        unrar
+        typstyle # typst code formatter
         verilator
         # volume
         w3m
@@ -361,7 +355,6 @@ in
   imports = [
     ../modules/neovim-lazy-path.nix
     ../modules/user-home-common.nix
-    # inputs.nixvim.homeModules.nixvim
   ];
 
   programs = {

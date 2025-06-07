@@ -21,7 +21,7 @@
       ripgrep
       tree
       # wget
-      unzip
+      unrar
       volume
       xdg-utils
     ];
