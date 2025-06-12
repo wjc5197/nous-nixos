@@ -72,8 +72,8 @@ in
       # size = 10;
     };
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
+      name = "Layan-Dark";
+      package = pkgs.layan-gtk-theme;
     };
   };
 
