@@ -437,7 +437,7 @@ in
           sort = "version:refname";
         };
       };
-      signing ={
+      signing = {
         key = gpg-key-fingerprint;
         signByDefault = true;
       };
@@ -471,16 +471,10 @@ in
     mbsync = {
       enable = true;
     };
-    mpv = {
-      enable = true;
-    };
     msmtp = {
       enable = true;
     };
     mu = {
-      enable = true;
-    };
-    neovim = {
       enable = true;
     };
     obs-studio = {
@@ -598,6 +592,7 @@ in
       "dunst/dunstrc".source = ./dunstrc;
       "fcitx/rime/default.custom.yaml".source = ./rime.yaml;
       "fcitx5/conf/clipboard.conf".source = ./fcitx5-clipboard.conf;
+      "mpv/mpv.conf".source = ./mpv.conf;
       "redshift/redshift.conf".source = ./redshift.conf;
       # "sway/config".source = pkgs.lib.mkOverride 10 "/home/<user>/dotfiles/sway/config"
       "zathura/zathurarc".source = ./zathurarc;
