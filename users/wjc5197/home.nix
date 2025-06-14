@@ -600,6 +600,7 @@ in
       "fcitx5/conf/clipboard.conf".source = ./fcitx5-clipboard.conf;
       "redshift/redshift.conf".source = ./redshift.conf;
       # "sway/config".source = pkgs.lib.mkOverride 10 "/home/<user>/dotfiles/sway/config"
+      "zathura/zathurarc".source = ./zathurarc;
       "Zeal/Zeal.conf".source = ./zeal.conf;
     };
     # ~/.local/share
@@ -637,7 +638,7 @@ in
     };
     mimeApps = {
       defaultApplications = {
-        "application/pdf" = [ "mupdf.desktop" ];
+        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
         "inode/directory" = [ "yazi.desktop" ];
         "text/html" = [ "google-chrome.desktop" ];
         "x-scheme-handler/about" = [ "google-chrome.desktop" ];

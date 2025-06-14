@@ -15,7 +15,6 @@
       fd
       gdb
       google-chrome
-      mupdf
       nixfmt-rfc-style
       p7zip
       ripgrep
@@ -68,6 +67,9 @@
       enable = true;
     };
     neovim = {
+      enable = true;
+    };
+    zathura = {
       enable = true;
     };
   };
