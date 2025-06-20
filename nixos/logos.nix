@@ -205,13 +205,13 @@
         enable = true;
       };
     };
-    stirling-pdf = {
-      enable = true;
-      environment = {
-        INSTALL_BOOK_AND_ADVANCED_HTML_OPS = "true";
-        SERVER_PORT = 8070;
-      };
-    };
+    # stirling-pdf = {
+    #   enable = true;
+    #   environment = {
+    #     INSTALL_BOOK_AND_ADVANCED_HTML_OPS = "true";
+    #     SERVER_PORT = 8070;
+    #   };
+    # };
     sunshine = {
       autoStart = false;
       enable = true;

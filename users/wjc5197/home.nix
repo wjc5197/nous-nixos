@@ -233,6 +233,8 @@ in
         # openai-whisper-cpp
         # opera
         ormolu
+        pdfcpu
+        pdftk
         plantuml
         polkit-gnome-agent
         prismlauncher
