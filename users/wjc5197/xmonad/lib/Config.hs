@@ -63,6 +63,8 @@ logosKeys conf@(XConfig {XMonad.modMask = modm}) =
       ((modm, xK_p), spawn "rofi -show drun"),
       -- launch clipmenu
       ((modm, xK_v), spawn "clipmenu"),
+      -- launch boomer
+      ((modm .|. shiftMask, xK_z), spawn "boomer"),
       -- volume control
       ((0, xF86XK_AudioRaiseVolume), spawn "volume.sh up"),
       ((0, xF86XK_AudioLowerVolume), spawn "volume.sh down"),

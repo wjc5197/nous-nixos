@@ -143,6 +143,7 @@ in
         bleachbit
         blender
         blueman
+        boomer
         # cabal-install
         cachix
         caddy
