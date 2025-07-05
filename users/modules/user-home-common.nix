@@ -27,6 +27,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       GTK_IM_MODULE = "fcitx";
+      NIXOS_OZONE_WL = "1";
       QT_IM_MODULE = "fcitx";
       XMODIFIERS = "@im=fcitx";
     };

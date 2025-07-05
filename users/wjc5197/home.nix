@@ -45,9 +45,9 @@ in
         mu = {
           enable = true;
         };
-        passwordCommand = "auth-get-pwd.sh 'imap.gmail.com' 'WJC5197@gmail.com'";
+        passwordCommand = "auth-get-pwd.sh 'imap.gmail.com' 'wjc5197@gmail.com'";
         primary = true;
-        realName = "WJC5197";
+        realName = "wjc5197";
         userName = "wjc5197@gmail.com";
       };
     };
