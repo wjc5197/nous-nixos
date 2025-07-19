@@ -269,13 +269,13 @@ in
         # subtitleedit
         tailwindcss
         # tdlib
-        termshark
         thefuck
         tinymist
         tldr
         tokei
         tor-browser
         translate-shell
+        tshark
         typescript
         typescript-language-server
         typst
