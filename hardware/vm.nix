@@ -1,4 +1,5 @@
 {
+  lib,
   ...
 }:
 {
@@ -31,5 +32,11 @@
       device = "/dev/disk/by-label/boot";
       fsType = "vfat";
     };
+  };
+  services = {
+    keyd = {
+      enable = lib.mkForce false;
+    };
+    spice-vdagentd.enable = true;
   };
 }
