@@ -6,12 +6,11 @@
   environment = {
     systemPackages = with pkgs; [
       wayland-utils
-      # remember to use wayland clipboard
-      xsel
+      wl-clipboard
     ];
   };
   imports = [
-    ./modules/fish
+    ./modules/fish.nix
     ./modules/nixos-common.nix
   ];
   programs = {

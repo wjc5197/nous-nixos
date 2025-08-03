@@ -89,6 +89,7 @@
           nixos = "thoth";
           system = "x86_64-linux";
           users = [
+            "doppelganger"
             "monad"
             "root"
           ];

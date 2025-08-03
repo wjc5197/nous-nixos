@@ -285,6 +285,7 @@ in
         w3m
         windsurf
         wineWowPackages.full
+        wofi
         wolfram-engine
         # xautolock
         xdg-ninja

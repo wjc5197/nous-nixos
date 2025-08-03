@@ -30,6 +30,7 @@
       man-pages-posix
       rr
       wayland-utils
+      wl-clipboard
       valgrind-light
       vulkan-tools
       xsel
