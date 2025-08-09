@@ -12,4 +12,9 @@
   imports = [
     ../modules/user-home-common.nix
   ];
+  programs = {
+    fish = {
+      enable = true;
+    };
+  };
 }

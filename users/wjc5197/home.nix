@@ -399,6 +399,9 @@ in
     firefox = {
       enable = true;
     };
+    fish = {
+      enable = true;
+    };
     fzf = {
       enable = true;
       enableBashIntegration = true;
