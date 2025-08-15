@@ -164,6 +164,7 @@ in
         # dmd
         dotnet-sdk
         dunst
+        elan
         emacsclient
         emanote
         espeak
@@ -269,6 +270,7 @@ in
         # subtitleedit
         tailwindcss
         # tdlib
+        tesseract
         thefuck
         tinymist
         tldr
