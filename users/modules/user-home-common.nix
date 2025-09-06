@@ -9,16 +9,11 @@
   home = {
     packages = with pkgs; [
       brightnessctl
-      btop
       du-dust
-      fastfetch
-      fd
       gdb
       google-chrome
       nixfmt-rfc-style
       p7zip
-      ripgrep
-      tree
       # wget
       unrar
       volume
@@ -55,13 +50,40 @@
     };
   };
   programs = {
+    bat = {
+      enable = true;
+    };
+    btop = {
+      enable = true;
+    };
+    eza = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
+    };
+    fastfetch = {
+      enable = true;
+    };
+    fd = {
+      enable = true;
+    };
     feh = {
       enable = true;
+    };
+    fzf = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
     };
     git = {
       delta = {
         enable = true;
       };
+      enable = true;
+    };
+    lazygit = {
       enable = true;
     };
     mpv = {
@@ -70,8 +92,23 @@
     neovim = {
       enable = true;
     };
+    ripgrep = {
+      enable = true;
+    };
+    yazi = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
+    };
     zathura = {
       enable = true;
+    };
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
     };
   };
   xdg = {

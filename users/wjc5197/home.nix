@@ -178,6 +178,7 @@ in
         gimp
         gnuapl
         gnuplot
+        godot
         goldendict-ng
         # google-cloud-sdk
         gopls
@@ -209,7 +210,6 @@ in
         leiningen
         libllvm
         libreoffice-fresh
-        # libsForQt5.full
         # livecaptions
         # lldb
         # llvmPackages.libcxx
@@ -247,10 +247,10 @@ in
         rclone
         redshift
         remmina
+        roswell
         rsync
         rustup
         # rust-analyzer
-        sbcl
         scala
         scalafmt
         scrcpy
@@ -367,8 +367,21 @@ in
     aria2 = {
       enable = true;
     };
+    bash = {
+      enable = true;
+    };
     bun = {
       enable = true;
+    };
+    direnv = {
+      config = {
+        hide_env_diff = true;
+      };
+      enable = true;
+      enableBashIntegration = true;
+      # enableFishIntegration = true; # enable direnv will always activate its functionality for fish
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
     };
     emacs = {
       enable = true;
@@ -403,12 +416,6 @@ in
     };
     fish = {
       enable = true;
-    };
-    fzf = {
-      enable = true;
-      enableBashIntegration = true;
-      enableFishIntegration = true;
-      enableZshIntegration = true;
     };
     git = {
       aliases = {
@@ -474,9 +481,6 @@ in
       };
       extraConfig = builtins.readFile ./kitty.conf;
     };
-    lazygit = {
-      enable = true;
-    };
     mbsync = {
       enable = true;
     };
@@ -527,17 +531,6 @@ in
       extraConfig = builtins.replaceStrings [ "dpi = 96" ] [ "dpi = ${toString dpi}" ] (
         builtins.readFile ./xmobarrc
       );
-    };
-    yazi = {
-      enable = true;
-      enableBashIntegration = true;
-      enableFishIntegration = true;
-      enableZshIntegration = true;
-    };
-    zoxide = {
-      enable = true;
-      enableBashIntegration = true;
-      enableZshIntegration = true;
     };
     zsh = {
       autosuggestion = {
