@@ -18,23 +18,16 @@
 }:
 
 let
-  clash-for-windows = {
-    pname = "clash-for-windows";
-    version = "0.20.39";
-    src = fetchurl {
-      url = "https://archive.org/download/clash_for_windows_pkg/Clash.for.Windows-0.20.39-x64-linux.tar.gz";
-      sha256 = "sha256-4HxeNYvOmVEcEDJiug1tAWfHAkLy5ognsJ96KRjUPcA=";
-    };
-  };
-  clash-for-windows-icon = {
-    pname = "clash-for-windows-icon";
-    version = "0";
-    src = fetchurl {
-      url = "https://web.archive.org/web/20211210004725if_/https://docs.cfw.lbyczf.com/favicon.ico";
-      sha256 = "1zd453mwrlc9kafagyvmj9i8vd5a4akp9srbsy9mxa48x77ckqp2";
-    };
-  };
-  icon = "${clash-for-windows-icon.src}[4]";
+  icon = "${
+    ({
+      pname = "clash-for-windows-icon";
+      version = "0";
+      src = fetchurl {
+        url = "https://web.archive.org/web/20211210004725if_/https://docs.cfw.lbyczf.com/favicon.ico";
+        sha256 = "1zd453mwrlc9kafagyvmj9i8vd5a4akp9srbsy9mxa48x77ckqp2";
+      };
+    }).src
+  }[4]";
   desktopItem = makeDesktopItem {
     name = "clash-for-windows";
     desktopName = "Clash for Windows";
@@ -45,7 +38,12 @@ let
   };
 in
 stdenv.mkDerivation rec {
-  inherit (clash-for-windows) pname version src;
+  pname = "clash-for-windows";
+  version = "0.20.39";
+  src = fetchurl {
+    url = "https://archive.org/download/clash_for_windows_pkg/Clash.for.Windows-0.20.39-x64-linux.tar.gz";
+    sha256 = "sha256-4HxeNYvOmVEcEDJiug1tAWfHAkLy5ognsJ96KRjUPcA=";
+  };
 
   nativeBuildInputs = [
     autoPatchelfHook
@@ -75,6 +73,7 @@ stdenv.mkDerivation rec {
   ];
 
   installPhase = ''
+    echo "${icon}"
     mkdir -p "$out/opt"
     cp -r . "$out/opt/clash-for-windows"
 

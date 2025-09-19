@@ -28,15 +28,7 @@
   makeWrapper,
 }:
 let
-  lceda-pro = {
-    pname = "lceda-pro";
-    version = "2.2.27.1";
-    src = fetchurl {
-      url = "https://image.lceda.cn/files/lceda-pro-linux-x64-2.2.27.1.zip";
-      hash = "sha256-ejMfevAjMl9PN+UpJd2/TCF0ZaktQR+PRCgFE3pz59E=";
-    };
-  };
-  lceda-pro-runtime-xorg = with xorg; [
+  xorgRuntime = with xorg; [
     libX11
     libXt
     libXext
@@ -54,7 +46,7 @@ let
     libXrandr
     libxcb
   ];
-  lceda-pro-runtime = [
+  runtime = [
     dpkg
     alsa-lib
     gtk3
@@ -78,10 +70,15 @@ let
     libGL
     mesa
     expat
-  ] ++ lceda-pro-runtime-xorg;
+  ] ++ xorgRuntime;
 in
 stdenv.mkDerivation {
-  inherit (lceda-pro) pname version src;
+  pname = "lceda-pro";
+  version = "2.2.27.1";
+  src = fetchurl {
+    url = "https://image.lceda.cn/files/lceda-pro-linux-x64-2.2.27.1.zip";
+    hash = "sha256-ejMfevAjMl9PN+UpJd2/TCF0ZaktQR+PRCgFE3pz59E=";
+  };
 
   nativeBuildInputs = [
     unzip
@@ -107,7 +104,7 @@ stdenv.mkDerivation {
     chmod +x $out/opt/lceda-pro/chrome_crashpad_handler
 
     wrapProgram $out/opt/lceda-pro/lceda-pro \
-      --set LD_LIBRARY_PATH ${lib.makeLibraryPath lceda-pro-runtime}
+      --set LD_LIBRARY_PATH ${lib.makeLibraryPath runtime}
     ln -s $out/opt/lceda-pro/lceda-pro $out/bin/lceda-pro
 
     runHook postInstall

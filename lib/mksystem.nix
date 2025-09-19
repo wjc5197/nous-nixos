@@ -10,7 +10,7 @@ host:
   dpi ? 96,
   hardware,
   isDarwin ? false,
-  isWSL ? false,
+  isWsl ? false,
   extraModules ? [ ],
   nixos,
   system,
@@ -20,17 +20,17 @@ host:
 
 let
   hardwareConfig = ../hardware/${hardware}.nix;
-  home-manager =
+  homeManager =
     if isDarwin then inputs.home-manager.darwinModules else inputs.home-manager.nixosModules;
   nixosConfig = ../nixos/${nixos}.nix;
-  systemFunc = if isDarwin then inputs.darwin.lib.darwinSystem else nixpkgs.lib.nixosSystem;
+  systemFn = if isDarwin then inputs.darwin.lib.darwinSystem else nixpkgs.lib.nixosSystem;
   usersHomeConfig = nixpkgs.lib.genAttrs users (user: import ../users/${user}/home.nix);
   usersNixOSConfig = builtins.map (user: ../users/${user}/${
     if isDarwin then "darwin" else "nixos"
   }.nix) users;
 in
 {
-  ${host} = systemFunc rec {
+  ${host} = systemFn rec {
     inherit system;
     modules =
       extraModules
@@ -49,9 +49,9 @@ in
         }
 
         # Bring in WSL if this is a WSL build
-        (if isWSL then inputs.nixos-wsl.nixosModules.wsl else { })
+        (if isWsl then inputs.nixos-wsl.nixosModules.wsl else { })
         hardwareConfig
-        home-manager.home-manager
+        homeManager.home-manager
         {
           home-manager.backupFileExtension = "nixbak";
           home-manager.extraSpecialArgs = {

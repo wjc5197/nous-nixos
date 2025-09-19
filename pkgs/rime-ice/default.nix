@@ -10,27 +10,24 @@
   yq-go,
 }:
 let
-  rime-ice = {
-    pname = "rime-ice";
-    version = "75b225e84f5e95ddf0b5a50fa6e2cff9800ee7b7";
-    src = fetchgit {
-      url = "https://github.com/iDvel/rime-ice.git";
-      rev = "75b225e84f5e95ddf0b5a50fa6e2cff9800ee7b7";
-      fetchSubmodules = true;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-/sKoufIf4m5h1Zds6AqIyeCjDaZsFU9ot5ln3ykuNyU=";
-    };
-    date = "2025-03-11";
-  };
   rimeDataBuildHook = makeSetupHook {
     name = "rime-data-build-hook.sh";
     substitutions = { };
   } ./rime-data-build-hook.sh;
 in
 stdenv.mkDerivation {
-  inherit (rime-ice) pname version src;
+  pname = "rime-ice";
+  version = "75b225e84f5e95ddf0b5a50fa6e2cff9800ee7b7";
+  src = fetchgit {
+    url = "https://github.com/iDvel/rime-ice.git";
+    rev = "75b225e84f5e95ddf0b5a50fa6e2cff9800ee7b7";
+    fetchSubmodules = true;
+    deepClone = false;
+    leaveDotGit = false;
+    sparseCheckout = [ ];
+    sha256 = "sha256-/sKoufIf4m5h1Zds6AqIyeCjDaZsFU9ot5ln3ykuNyU=";
+  };
+  date = "2025-03-11";
 
   nativeBuildInputs = [
     librime

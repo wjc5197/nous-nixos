@@ -8,8 +8,8 @@
 }:
 
 let
-  gpg-key-fingerprint = "28ED85EC47C3E1A84FA9A52B5F919C9DB9BADDD4";
-  system = pkgs.system;
+  gpgKeyFingerprint = "28ED85EC47C3E1A84FA9A52B5F919C9DB9BADDD4";
+  inherit (pkgs) system;
 in
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -30,7 +30,7 @@ in
         address = "wjc5197@gmail.com";
         flavor = "gmail.com";
         gpg = {
-          key = gpg-key-fingerprint;
+          key = gpgKeyFingerprint;
           signByDefault = true;
         };
         imap = {
@@ -123,8 +123,7 @@ in
         # (pkgs.writeShellScriptBin "my-hello" ''
         #   echo "Hello, ${config.home.username}!"
         # '')
-
-        agda
+        (agda.withPackages (agdaPkgs: with agdaPkgs; [ standard-library ]))
         aider-chat
         airshipper
         anki-bin
@@ -226,6 +225,7 @@ in
         monolith
         moonlight-qt
         musescore
+        ngspice
         nil
         ninja
         nodejs
@@ -393,19 +393,19 @@ in
       #   withXwidgets = true;
       # });
       extraPackages =
-        epkgs: with epkgs; [
+        emacsPkgs: with emacsPkgs; [
           # pkgs.emacsPackages.jinx
           # pkgs.emacsPackages.rime
           # pkgs.librime
-          # epkgs.tdlib
+          # tdlib
           copilot
-          # epkgs.ement
+          # ement
           mu4e
           pdf-tools
           telega
           treesit-grammars.with-all-grammars
           vterm
-          # epkgs.w3m
+          # w3m
         ];
     };
     feh = {
@@ -454,7 +454,7 @@ in
         };
       };
       signing = {
-        key = gpg-key-fingerprint;
+        key = gpgKeyFingerprint;
         signByDefault = true;
       };
       userEmail = "wjc5197@gmail.com";
