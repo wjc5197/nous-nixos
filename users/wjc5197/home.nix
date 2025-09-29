@@ -423,13 +423,24 @@ in
       };
       enable = true;
       extraConfig = {
+        alias = {
+          reword = "commit --amend";
+          uncommit = "reset --soft HEAD~1";
+        };
         # although gh as credential helper by default, netrc can be used in non github repo
         credential.helper = "netrc";
+        color = {
+          ui = "auto";
+        };
         commit = {
           verbose = true;
         };
-        color = {
-          ui = "auto";
+        core = {
+          whitespace = "-trailing-space";
+        };
+        diff = {
+          mnemonicPrefix = true;
+          renames = true;
         };
         help = {
           autocorrect = "prompt";
@@ -448,6 +459,10 @@ in
           autoSetupRemote = true;
           default = "simple";
           followTags = true;
+        };
+        status = {
+          showUntrackedFiles = "all";
+          submoduleSummary = true;
         };
         tag = {
           sort = "version:refname";
@@ -515,7 +530,25 @@ in
       enable = true;
       extraPackages = tpkgs: {
         inherit (tpkgs)
+          # amsmath
+          # beamer
+          # capt-of
+          # dvipng # for preview and export as html
+          # dvisvgm
+          # esint # extend integral
+          # etoolbox
+          # esvect # extend vector
+          # geometry
+          # hyperref # extend hypertext
+          # libertinus
+          # mathtools # math tools to use with amsmath
+          # mylatexformat
+          # pgf # portable graphics format
+          # relsize
           scheme-full
+          # ulem # underline
+          # wrapfig # text flows around figure
+          # xcolor # extend color
           ;
       };
     };
