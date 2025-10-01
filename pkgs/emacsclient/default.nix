@@ -1,5 +1,6 @@
 {
-  emacs-git,
+  emacs,
+  emacsDrv ? emacs,
   lib,
   makeWrapper,
   stdenv,
@@ -10,7 +11,7 @@ let
 in
 stdenv.mkDerivation rec {
   buildInputs = [
-    emacs-git
+    emacsDrv
   ];
   installPhase = ''
     mkdir -p $out/bin

@@ -164,7 +164,7 @@ in
         dotnet-sdk
         dunst
         elan
-        emacsclient
+        (emacsclient.override { emacsDrv = config.programs.emacs.package; })
         emanote
         espeak
         evtest
@@ -649,21 +649,21 @@ in
       #       "application/pdf"
       #     ];
       #   };
-      emacsclient-mail = {
-        categories = [
-          "Network"
-          "Email"
-        ];
-        comment = "GNU Emacs is an extensible, customizable text editor - and more";
-        exec = "${pkgs.emacsclient}/bin/emacsclient.sh %u";
-        genericName = "Text Editor";
-        icon = "emacs";
-        name = "Emacs (Mail)";
-        mimeType = [ "x-scheme-handler/mailto" ];
-        noDisplay = true;
-        terminal = false;
-        type = "Application";
-      };
+      # emacsclient-mail = {
+      #   categories = [
+      #     "Network"
+      #     "Email"
+      #   ];
+      #   comment = "GNU Emacs is an extensible, customizable text editor - and more";
+      #   exec = "${pkgs.emacsclient}/bin/emacsclient.sh %u";
+      #   genericName = "Text Editor";
+      #   icon = "emacs";
+      #   name = "Emacs (Mail)";
+      #   mimeType = [ "x-scheme-handler/mailto" ];
+      #   noDisplay = true;
+      #   terminal = false;
+      #   type = "Application";
+      # };
     };
     mimeApps = {
       defaultApplications = {
