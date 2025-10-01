@@ -271,7 +271,6 @@ in
         tailwindcss
         # tdlib
         tesseract
-        thefuck
         tinymist
         tldr
         tokei

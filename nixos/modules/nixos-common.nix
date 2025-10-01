@@ -152,9 +152,9 @@
       enable = true;
     };
     logind = {
-      extraConfig = ''
-        HandlePowerKey=lock
-      '';
+      settings.Login = {
+        HandlePowerKey="lock";
+      };
     };
     # Enable the OpenSSH daemon.
     openssh = {
