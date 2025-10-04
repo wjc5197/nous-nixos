@@ -4,7 +4,6 @@
 }:
 
 {
-  # microsoft-surface.kernelVersion = "6.10.5";
   boot = {
     extraModulePackages = [ ];
     kernelModules = [ "kvm-intel" ];
@@ -78,6 +77,8 @@
       options = [ "subvol=root" ];
     };
   };
+
+  hardware.microsoft-surface.kernelVersion = "stable";
 
   imports = [
     (import ./modules/grub2-theme-uefi-grub.nix {
